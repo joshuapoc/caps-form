@@ -69,8 +69,35 @@ for(i=0;i<input_textos.length;i++){
     });
 }
 
-
 /* Validacion inputs de correo */
+const input_correo=document.querySelector(".email input");
+const border_correo=document.querySelector(".email .border");
+const validador_correo=/^[a-zA-z0-9-_\.]+@[a-zA-Z]+\.[a-z]+$/;
+input_correo.addEventListener("input", ()=>{
+    if(validador_correo.test(input_correo.value)===true){
+        border_correo.innerHTML="✔";
+        border_correo.classList.replace("error","border");
+    }else{
+        border_correo.innerHTML="Formato incorrecto";
+        border_correo.classList.replace("border","error");
+    }
+});
+
+/* Validacion inputs de telefono */
+const input_tel=document.querySelector(".telefono input");
+const border_tel=document.querySelector(".telefono .border");
+const validador_tel=/(^\+[0-9]+|[0-9]+)$/;
+input_tel.addEventListener("input",()=>{
+    if(validador_tel.test(input_tel.value)===true){
+        border_tel.innerHTML="✔";
+        border_tel.classList.replace("error","border");
+    }else{
+        border_tel.innerHTML="Solo caracteres numericos";
+        border_tel.classList.replace("border","error");
+    }
+});
+
+/* Validacion inputs de tipo numero*/
 
 
 /* Time validator */

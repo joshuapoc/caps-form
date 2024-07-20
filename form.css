@@ -127,6 +127,11 @@ form{
     height: 130px;
     border-radius: 10px;
     background-color: var(--light-grey);
+    resize: none;
+}
+.form :is(input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button, input[type="number"]){
+    -webkit-appearance: none;
+    -webkit-appearance: textfield;
 }
 
 i{

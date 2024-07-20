@@ -82,10 +82,10 @@
                         <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
                         <div class="border"></div>
                     </div>
-                    <div class="data horas-sem">
+                    <div class="data numero">
                         <label for="horas-sem">Horas semanales <small>*</small></label>
-                        <input type="text" id="horas-sem" name="horas-sem" maxlength="4" inputmode="numeric" title="Introduzca numeros">
-                        <div class="border" id="border"></div>
+                        <input type="number" id="horas-sem" name="horas-sem" maxlength="4" inputmode="numeric" title="Horas realizadas" placeholder="0000">
+                        <div class="border"></div>
                     </div>
                 </div>
                 <div class="form form-section">
@@ -102,14 +102,14 @@
                         <input type="text" id="categoria" name="categoria">
                         <div class="border"></div>
                     </div>
-                    <div class="data num-cuenta">
+                    <div class="data numero">
                         <label for="num-cuenta">N° Cuenta<small>*</small></label>
-                        <input type="text" id="num-cuenta" name="num-cuenta">
+                        <input type="number" id="num-cuenta" name="num-cuenta" maxlength="12" inputmode="numeric" placeholder="000000000000">
                         <div class="border"></div>
                     </div>
-                    <div class="data num-seg-social">
+                    <div class="data numero">
                         <label for="num-seg-social">N° Seguridad social <small>*</small></label>
-                        <input type="number" id="num-seg-social" name="num-seg-social" inputmode="numeric">
+                        <input type="number" id="num-seg-social" name="num-seg-social" inputmode="numeric" maxlength="12" placeholder="000000000000">
                         <div class="border" id="border"></div>
                     </div>
                 </div>

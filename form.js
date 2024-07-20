@@ -86,7 +86,7 @@ input_correo.addEventListener("input", ()=>{
 /* Validacion inputs de telefono */
 const input_tel=document.querySelector(".telefono input");
 const border_tel=document.querySelector(".telefono .border");
-const validador_tel=/(^\+[0-9]+|[0-9]+)$/;
+const validador_tel=/^([\+][0-9]+|[0-9])+$/;
 input_tel.addEventListener("input",()=>{
     if(validador_tel.test(input_tel.value)===true){
         border_tel.innerHTML="✔";
@@ -98,7 +98,22 @@ input_tel.addEventListener("input",()=>{
 });
 
 /* Validacion inputs de tipo numero*/
-
+const input_numeros=document.querySelectorAll(".numero input");
+const border_numeros=document.querySelectorAll(".numero .border");
+const validador_numeros=/^[0-9]+$/;
+for(i=0;i<input_numeros.length;i++){
+    let input_numero=input_numeros[i];
+    let border_numero=border_numeros[i];
+    input_numeros[i].addEventListener("input",()=>{
+        if(validador_numeros.test(input_numero.value)===true){
+            border_numero.classList.replace("error","border");
+            border_numero.innerHTML="✔";
+        }else{
+            border_numero.classList.replace("border","error");
+            border_numero.innerHTML="Solo caracteres numericos";
+        }
+    });
+}
 
 /* Time validator */
 /* const input_horas=document.querySelector("#horas-sem");

@@ -31,29 +31,31 @@ body{
     border-radius: 1em;
     border-top: 1em solid var(--dark-purple);
     margin: 2em;
-    padding: 1em;
+    padding: .5em 1em;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     overflow-x: hidden;
 }
 /* Layout */
 form{
     width: 100%;
     display: flex;
+    flex-direction: row;
     gap: 20px;
     position: relative;
-    margin-bottom: 20px;
 }
 .form{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: start;
-    gap: 15px;
-    padding: 5px 0;
+    gap: 20px;
     position: relative;
     transition: all .3s ease-in-out;
+}
+.form-section{
+    height: 100%;
 }
 .form-section:first-child{
     position: relative;
@@ -154,11 +156,45 @@ i{
 
 /* Buttons*/
 .buttons-container{
+    width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
 }
-.buttons-section:first-child{
+
+.buttons-section{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+}
+.form-section:first-child .buttons-container button:first-child{
+    cursor: auto;
+    color: var(--grey);
+    border-color: var(--grey);
+}
+.buttons-section button{
+    width: 90px;
+    padding: 5px;
+    outline: none;
+    background-color: transparent;
+    border: 3px solid var(--black);
+    border-radius: 8px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.buttons-container button:not(.form-section:first-child .buttons-section button:first-child):hover{
+    border: 3px solid var(--dark-purple);
+    box-shadow: 0 0 5px var(--dark-purple);
+}
+/* .buttons-section: {
+    border: 3px solid var(--dark-purple);
+    box-shadow: 0 0 5px var(--dark-purple);
+} */
+/* .buttons-section:first-child{
     position: relative;
 }
 .buttons-section:not(:first-child){
@@ -176,7 +212,7 @@ i{
 .buttons{
     transition: all .3s ease-in-out;
 }
-.buttons-container button{
+.buttons-container :is(button, input[type="submit"]){
     width: 90px;
     padding: 5px;
     outline: none;
@@ -191,10 +227,10 @@ i{
     color: var(--grey);
     border-color: var(--grey);
 }
-button:not(.buttons-section:first-child .atr:first-child, .buttons-section:last-child .sig:last-child):hover{
+:is(button:not(.buttons-section:first-child .atr:first-child, .buttons-section:last-child .sig:last-child), input[type="submit"]):hover{
     border: 3px solid var(--dark-purple);
     box-shadow: 0 0 5px var(--dark-purple);
-}
+} */
 /* media querie */
 @media screen and (max-width: 476px) {
     .observaciones textarea{

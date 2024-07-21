@@ -1,27 +1,20 @@
 /* Animacion de slide (botones y secciones del formulario)*/
 const sig_buttons=document.querySelectorAll(".sig");
 const atr_buttons=document.querySelectorAll(".atr");
-const btn_sections=document.querySelectorAll(".buttons");
 const form_sections=document.querySelectorAll(".form");
 for(i=0;i<sig_buttons.length;i++){
-    let btn_section=i;
     let form_section=i;
     sig_buttons[i].addEventListener("click", ()=>{
-        btn_sections[btn_section].style.transform="translate(-110%)";
         form_sections[form_section].style.transform="translate(-110%)";
         form_sections[form_section+1].style.transform="translate(0)";
-        btn_sections[btn_section+1].style.transform="translate(0%)";
     });
 }
 for(i=atr_buttons.length-1;i>=0;i--){
     let current_btn_section=i;
     let current_form_section=i;
     let prior_form_section=i-1;
-    let prior_btn_section=i-1;
     atr_buttons[current_btn_section].addEventListener("click", ()=>{
-        btn_sections[prior_btn_section].style.transform="translate(0%)";
         form_sections[prior_form_section].style.transform="translate(0%)";
-        btn_sections[current_btn_section].style.transform="translate(110%)";
         form_sections[current_form_section].style.transform="translate(110%)";
     });
 }
@@ -114,23 +107,6 @@ for(i=0;i<input_numeros.length;i++){
         }
     });
 }
-
-/* Time validator */
-/* const input_horas=document.querySelector("#horas-sem");
-const borders=document.querySelector("#border");
-input_horas.addEventListener("blur", ()=>{
-    let re=/[a-zA-Z]+/;
-    let re2=/[0-9]+/;
-    let values=input_horas.value;
-    if(re.test(values)===true){
-        borders.classList.remove("border");
-        borders.classList.add("error");
-    }
-    if(re2.test(values)===true && re.test(values)===false){
-        borders.classList.remove("error");
-        borders.classList.add("border");
-    }
-}); */
 
 /* Validacion observaciones*/
 const textarea=document.querySelector(".observaciones textarea");

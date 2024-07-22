@@ -1,3 +1,5 @@
+/* Creacion bd form_caps*/
+CREATE DATABASE form_caps;
 /* Creacion de tabla clientes (caps). NO TIENE RELACIONES */
 USE form_caps;
 CREATE TABLE clientes(
@@ -24,6 +26,7 @@ CREATE TABLE clientes(
 USE form_caps;
 ALTER TABLE clientes MODIFY COLUMN num_cuenta INT NOT NULL UNIQUE DEFAULT 0;
 ALTER TABLE clientes MODIFY COLUMN num_seguridad_social INT NOT NULL UNIQUE DEFAULT 0;
+ALTER TABLE clientes MODIFY COLUMN id_cliente INT UNSIGNED NOT NULL UNIQUE AUTO_INCREMENT;
 
 /* Prueba insercion cliente */
 USE form_caps;
@@ -36,18 +39,15 @@ USE form_caps;
 INSERT INTO clientes 
 (id_cliente, dni, nombre, primer_apellido, segundo_apellido, email, direccion, poblacion, fecha_alta, fecha_baja, fecha_nacimiento, horas_semanales, centro, categoria, num_cuenta, num_seguridad_social, observaciones)
 VALUES
-(2, "z1198958i", "pepito", "mariño", "monroy", "pepito@example.com", "direccion de su madre", "torrente", "2015-10-10", "2020-05-09", "2000-11-02", 20, "torrente", "programacion", 987654321, 987654321, "nada2");
-
+(1, "z1198958i", "pepito", "mariño", "monroy", "pepito@example.com", "direccion de su madre", "torrente", "2015-10-10", "2020-05-09", "2000-11-02", 20, "torrente", "programacion", 987654321, 987654321, "nada2");
 
 /* Prueba de datos con consulta */
 USE form_caps;
 SELECT * FROM clientes;
 
-/* Eleminacion usuario 1 */
+/* Borrar datos */
 USE form_caps;
-DELETE FROM clientes
-WHERE id_cliente=1;
-
-/* Modificacion de datos de cliente con id "2" */
+DELETE FROM clientes;
+/* Borrar bd*/
 USE form_caps;
-UPDATE clientes SET id_cliente=1 WHERE nombre="pepito";
+DROP DATABASE form_caps;

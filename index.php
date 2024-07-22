@@ -12,14 +12,14 @@
     <body>
         <div class="main-container">
             <h1>Formulario</h1>
-            <form action="./codigos php/conexion-db.php" method="post">
+            <form action="./codigos php/datos_form.php" method="post">
                 <div class="form form-section">
                     <div class="form-title t1">
                         <span><i class="fa-solid fa-user"></i>Datos personales</span>
                     </div>
                     <div class="data id">
                         <label for="dni-nie">Identificacion <small>*</small></label>
-                        <input type="text" id="dni-nie" name="dni-nie" placeholder="DNI-NIE">
+                        <input type="text" id="dni-nie" name="dni-nie" placeholder="DNI-NIE" required>
                         <div class="border"></div>
                     </div>
                     <div class="data texto">
@@ -39,7 +39,6 @@
                     </div>
                     <div class="buttons-container">
                         <div class="buttons buttons-section">
-                            <button type="button" class="atr" disabled>Atras</button>
                             <button type="button" class="sig">Siguiente</button>
                         </div>
                     </div>
@@ -157,3 +156,6 @@
         <script src="./codigos js/form.js"></script>
     </body> 
 </html>
+<?php
+    include ("./codigos php/error-handler.php");
+?>

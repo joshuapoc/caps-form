@@ -9,19 +9,18 @@ for(i=0;i<sig_buttons.length;i++){
         form_sections[form_section+1].style.transform="translate(0)";
     });
 }
-for(i=atr_buttons.length-1;i>=0;i--){
-    let current_btn_section=i;
-    let current_form_section=i;
-    let prior_form_section=i-1;
-    atr_buttons[current_btn_section].addEventListener("click", ()=>{
-        form_sections[prior_form_section].style.transform="translate(0%)";
+for(i=0;i<atr_buttons.length;i++){
+    let current_form_section=i+1;
+    let prior_form_section=i;
+    atr_buttons[i].addEventListener("click",()=>{
         form_sections[current_form_section].style.transform="translate(110%)";
+        form_sections[prior_form_section].style.transform="translate(0%)";
     });
 }
+console.log(atr_buttons.length);
 /* Checked inputs */
 const form_label_ticks=document.querySelectorAll(".form .data small");
 const form_inputs=document.querySelectorAll(".form .data input");
-
 for(i=0;i<form_inputs.length;i++){
     let field=i;
     form_inputs[field].addEventListener("blur", ()=>{
@@ -30,6 +29,7 @@ for(i=0;i<form_inputs.length;i++){
         }
     });
 }
+
 /* Validacion DNI-NIE */
 const input_id=document.querySelector("#dni-nie");
 const id_border=document.querySelector(".id .border");
@@ -111,11 +111,35 @@ for(i=0;i<input_numeros.length;i++){
 /* Validacion observaciones*/
 const textarea=document.querySelector(".observaciones textarea");
 textarea.addEventListener("input",(e)=>{
+    let label_tick_observaciones=document.querySelector(".observaciones small");
     let num_chars=textarea.value.length;
     let mensaje=document.querySelector(".observaciones .border");
     let insertion=e.inputType;
     if(insertion=="insertText" || insertion=="insertLineBreak" || insertion=="deleteContentBackward"){
         mensaje.innerHTML=num_chars+"/300 caracteres";
     }
-    console.log(num_chars);
+    textarea.addEventListener("blur",()=>{
+        if(textarea.value!==""){
+            label_tick_observaciones.style.color="var(--dark-purple)";
+        }
+    });
+});
+/* Desactivacion del submit en caso de campos vacios */
+const submit_input=document.querySelector("#enviar");
+submit_input.addEventListener("click",(e)=>{
+    let input_data=document.querySelectorAll(".data input");
+    let counter=0;
+    for(i=0;i<input_data.length;i++){
+        if(input_data[i].value===""){
+            e.preventDefault();
+        }
+    }
+    for(i=0;i<input_data.length;i++){
+        if(input_data[i].value!==""){
+            counter+=1;
+        }
+    }
+    if(counter>=0 && counter<input_data.length){
+        alert(counter+" registros completos");
+    }
 });

@@ -171,11 +171,7 @@ i{
     gap: 20px;
     padding: 5px;
 }
-.form-section:first-child .buttons-container button:first-child{
-    cursor: auto;
-    color: var(--grey);
-    border-color: var(--grey);
-}
+
 .buttons-section button{
     width: 90px;
     padding: 5px;
@@ -186,7 +182,7 @@ i{
     transition: all .3s ease;
     cursor: pointer;
 }
-.buttons-container button:not(.form-section:first-child .buttons-section button:first-child):hover{
+.buttons-container button:hover{
     border: 3px solid var(--dark-purple);
     box-shadow: 0 0 5px var(--dark-purple);
 }

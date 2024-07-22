@@ -7,12 +7,12 @@
     <link href='https://fonts.googleapis.com/css?family=Droid Sans' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/fc5405f34b.js" crossorigin="anonymous"></script>
-    <title>Formulario Clientes CAPS</title>
+    <title>Formulario</title>
 </head>
     <body>
         <div class="main-container">
             <h1>Formulario</h1>
-            <form action="./codigos php/conexion-db.php" method="POST">
+            <form action="./codigos php/conexion-db.php" method="post">
                 <div class="form form-section">
                     <div class="form-title t1">
                         <span><i class="fa-solid fa-user"></i>Datos personales</span>
@@ -37,6 +37,12 @@
                         <input type="text" id="apellido2" name="apellido2" placeholder="Perez">
                         <div class="border"></div>
                     </div>
+                    <div class="buttons-container">
+                        <div class="buttons buttons-section">
+                            <button type="button" class="atr" disabled>Atras</button>
+                            <button type="button" class="sig">Siguiente</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="form form-section">
                     <div class="form-title t1">
@@ -44,7 +50,7 @@
                     </div>
                     <div class="data email">
                         <label for="email">Correo electronico <small>*</small></label>
-                        <input type="email" id="email" name="email" placeholder="Pepito_perez@example.com" value="asd">
+                        <input type="email" id="email" name="email" placeholder="Pepito_perez@example.com">
                         <div class="border"></div>
                     </div>
                     <div class="data direccion">
@@ -61,6 +67,12 @@
                         <label for="telefono">N° telefono <small>*</small></label>
                         <input type="tel" id="telefono" name="telefono" placeholder="617893561">
                         <div class="border"></div>
+                    </div>
+                    <div class="buttons-container">
+                        <div class="buttons buttons-section">
+                            <button type="button" class="atr">Atras</button>
+                            <button type="button" class="sig">Siguiente</button>
+                        </div>
                     </div>
                 </div>
                 <div class="form form-section">
@@ -87,6 +99,12 @@
                         <input type="number" id="horas-sem" name="horas-sem" maxlength="4" inputmode="numeric" title="Horas realizadas" placeholder="0000">
                         <div class="border"></div>
                     </div>
+                    <div class="buttons-container">
+                        <div class="buttons buttons-section">
+                            <button type="button" class="atr">Atras</button>
+                            <button type="button" class="sig">Siguiente</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="form form-section">
                     <div class="form-title">
@@ -112,6 +130,12 @@
                         <input type="number" id="num-seg-social" name="num-seg-social" inputmode="numeric" maxlength="12" placeholder="000000000000">
                         <div class="border" id="border"></div>
                     </div>
+                    <div class="buttons-container">
+                        <div class="buttons buttons-section">
+                            <button type="button" class="atr">Atras</button>
+                            <button type="button" class="sig">Siguiente</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="form form-section">
                     <div class="form-title">
@@ -122,32 +146,14 @@
                         <textarea name="observaciones" id="observaciones" maxlength="300"></textarea>
                         <div class="border"></div>
                     </div>
+                    <div class="buttons-container">
+                        <div class="buttons buttons-section">
+                            <button type="button" class="atr">Atras</button>
+                            <button type="submit" id="enviar" class="enviar">Enviar</button>
+                        </div>
+                    </div>
                 </div>
-                <input type="submit" value="enviar" class="enviar">
             </form>
-            <div class="buttons-container">
-                <div class="buttons buttons-section">
-                    <button type="button" class="atr">Atras</button>
-                    <button type="button" class="sig">Siguiente</button>
-                </div>
-                <div class="buttons buttons-section">
-                    <button type="button" class="atr">Atras</button>
-                    <button type="button" class="sig">Siguiente</button>
-                </div>
-                <div class="buttons buttons-section">
-                    <button type="button" class="atr">Atras</button>
-                    <button type="button" class="sig">Siguiente</button>
-                </div>
-                <div class="buttons buttons-section">
-                    <button type="button" class="atr">Atras</button>
-                    <button type="button" class="sig">Siguiente</button>
-                </div>
-                <div class="buttons buttons-section">
-                    <button type="button" class="atr">Atras</button>
-                    <!-- <input type="submit" value="enviar" class="enviar"> -->
-                </div>
-            </div>
-        </div>
         <script src="./codigos js/form.js"></script>
     </body> 
 </html>

@@ -11,6 +11,13 @@
     <title>Formulario</title>
 </head>
     <body>
+        <div class="popup-container">    
+            <div class="popup-message">
+                <div class="logo"><img src="./assets/modal_logo2.png" class="logo-image" alt="caps logo"></div>
+                <img class="exit-ico" src="./assets./exit.ico" alt="exit">
+                <strong></strong>
+            </div>        
+        </div>
         <div class="main-container">
             <h1>Formulario</h1>
             <form action="./codigos php/datos_form.php" method="post">

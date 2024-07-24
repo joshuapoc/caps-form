@@ -20,7 +20,7 @@
         </div>
         <div class="main-container">
             <h1>Formulario</h1>
-            <form action="./codigos php/datos_form.php" method="post">
+            <form action="./codigos php/datos-form.php" method="post">
                 <div class="form form-section">
                     <div class="form-title t1">
                         <span><i class="fa-solid fa-user"></i>Datos personales</span>

@@ -17,7 +17,6 @@ for(i=0;i<atr_buttons.length;i++){
         form_sections[prior_form_section].style.transform="translate(0%)";
     });
 }
-console.log(atr_buttons.length);
 /* Checked inputs */
 const form_label_ticks=document.querySelectorAll(".form .data small");
 const form_inputs=document.querySelectorAll(".form .data input");
@@ -140,7 +139,7 @@ submit_input.addEventListener("click",(e)=>{
             counter+=1;
         }
     }
-    if(counter>=0 && counter<=input_data.length){
+    if(counter>=0 && counter<input_data.length-1){
         popup_container.style.visibility="visible";
         popup_message.innerHTML=counter+" registro completo";
         popup_logo.style.animation="girar 4s";

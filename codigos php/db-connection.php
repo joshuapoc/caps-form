@@ -5,13 +5,10 @@
     $contraseña="";
     $db_caps="form_caps";
     $conexion="";
-    $conexion= mysqli_connect($servidor, $usuario, $contraseña, $db_caps);
-/*     try {
+    try {
         $conexion= mysqli_connect($servidor, $usuario, $contraseña, $db_caps);
     } catch (mysqli_sql_exception) {
-        echo "sin conexion" . "<br>";
+        echo "No se pudo acceder a la base de datos";
+        header("location: ../index.php?error");
     }
-    if($conexion){
-        echo "conectado" . "<br>";
-    } */
 ?>

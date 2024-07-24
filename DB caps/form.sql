@@ -26,7 +26,7 @@ CREATE TABLE clientes(
 USE form_caps;
 ALTER TABLE clientes MODIFY COLUMN num_cuenta INT NOT NULL UNIQUE DEFAULT 0;
 ALTER TABLE clientes MODIFY COLUMN num_seguridad_social INT NOT NULL UNIQUE DEFAULT 0;
-ALTER TABLE clientes MODIFY COLUMN id_cliente INT UNSIGNED NOT NULL UNIQUE AUTO_INCREMENT;
+ALTER TABLE clientes MODIFY COLUMN id_cliente INT UNSIGNED NOT NULL UNIQUE;
 
 /* Prueba insercion cliente */
 USE form_caps;
@@ -41,9 +41,11 @@ INSERT INTO clientes
 VALUES
 (1, "z1198958i", "pepito", "mariño", "monroy", "pepito@example.com", "direccion de su madre", "torrente", "2015-10-10", "2020-05-09", "2000-11-02", 20, "torrente", "programacion", 987654321, 987654321, "nada2");
 
-/* Prueba de datos con consulta */
+/* Prueba de datos con consultas*/
 USE form_caps;
 SELECT * FROM clientes;
+SELECT dni, nombre, primer_apellido, segundo_apellido, email, direccion, poblacion, fecha_alta, fecha_baja, fecha_nacimiento, horas_semanales, centro, categoria, num_cuenta, num_seguridad_social, observaciones
+FROM clientes;
 
 /* Borrar datos */
 USE form_caps;

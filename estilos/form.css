@@ -4,6 +4,7 @@
     --black: rgb(0, 0, 0);
     --light-grey: rgb(204, 201, 201);
     --dark-purple: rgba(186, 0, 183, 1);
+    --yellow: rgba(255,255,0);
     --error: rgb(255, 0, 0);
     --roboto-fnt: "Roboto Slab";
     --droid-fnt: "Droid Sans";
@@ -19,8 +20,93 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
+.popup-container{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(94, 93, 93,0.8);
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    visibility: hidden;
+}
+/* Popup message */
+.popup-message{
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    min-height: 200px;
+    background-color: var(--white);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 1.2em 1.2em 1.2em;
+    margin: 1.5em;
+}
+.popup-message .logo{
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 80px;
+    aspect-ratio: 1/1;
+    rotate: -20deg;
+    border: 3px solid var(--black);
+    border-radius: 50%;
+}
+.popup-message .logo::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 2px solid var(--yellow);
+    box-shadow: 0 0 10px var(--black);
+    width: 100%;
+    height: 100%;
+    scale: 1.1;
+}
+.popup-message .logo-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--yellow);
+    border-radius: 50%;
+}
+/* .popup-message .logo{
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 80px;
+    aspect-ratio: 1/1;
+    rotate: -20deg;
+    animation: girar 4s;
+    animation-delay: 2s;
+} */
+.popup-message .exit-ico{
+    position: absolute;
+    cursor: pointer;
+    width: 40px;
+    top: 0;
+    right: 0;
+    z-index: 5;
+}
+.popup-message strong{
+    font-family: var(--roboto-fnt);
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--black);
+}
+/* Main container */
 .main-container{
+    z-index: 1;
     height: 420px;
     height: 100%;
     min-height: 400px;
@@ -186,7 +272,25 @@ i{
     border: 3px solid var(--dark-purple);
     box-shadow: 0 0 5px var(--dark-purple);
 }
-/* media querie */
+/* Animation for logo */
+@keyframes girar {
+    0%{
+        transform: rotatey(0);
+    }
+    50%{
+        transform: rotatey(400deg);
+    }
+    60%{
+        transform: rotatey(120deg);
+    }
+    90%{
+        transform: rotatey(330deg);
+    }
+    100%{
+        transform: rotatey(0);
+    }
+}
+/* media query*/
 @media screen and (max-width: 476px) {
     .observaciones textarea{
         height: 350px;

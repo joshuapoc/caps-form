@@ -124,7 +124,11 @@ textarea.addEventListener("input",(e)=>{
         }
     });
 });
-/* Desactivacion del submit en caso de campos vacios */
+/* Eventos de modal (alert personalizado)*/
+const popup_x=document.querySelector(".popup-message .exit-ico");
+const popup_container=document.querySelector(".popup-container");
+const popup_logo=document.querySelector(".logo");
+const popup_message=document.querySelector(".popup-message strong");
 const submit_input=document.querySelector("#enviar");
 submit_input.addEventListener("click",(e)=>{
     let input_data=document.querySelectorAll(".data input");
@@ -132,14 +136,20 @@ submit_input.addEventListener("click",(e)=>{
     for(i=0;i<input_data.length;i++){
         if(input_data[i].value===""){
             e.preventDefault();
-        }
-    }
-    for(i=0;i<input_data.length;i++){
-        if(input_data[i].value!==""){
+        }else{
             counter+=1;
         }
     }
-    if(counter>=0 && counter<input_data.length){
-        alert(counter+" registros completos");
+    if(counter>=0 && counter<=input_data.length){
+        popup_container.style.visibility="visible";
+        popup_message.innerHTML=counter+" registro completo";
+        popup_logo.style.animation="girar 4s";
+        popup_logo.style.animationDelay="1s";
+        window.addEventListener("click",(e)=>{
+            if(e.target===popup_x || e.target===popup_container){
+                popup_container.style.visibility="hidden";
+                popup_logo.style.animation="";
+            }
+        });
     }
 });

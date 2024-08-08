@@ -14,7 +14,7 @@
         <div class="popup-container">    
             <div class="popup-message">
                 <div class="logo"><img src="./assets/modal_logo2.png" class="logo-image" alt="caps logo"></div>
-                <img class="exit-ico" src="./assets./exit.ico" alt="exit">
+                <small class="exit">✖</small>
                 <strong></strong>
             </div>        
         </div>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="data id">
                         <label for="dni-nie">Identificacion <small>*</small></label>
-                        <input type="text" id="dni-nie" name="dni-nie" placeholder="DNI-NIE" required>
+                        <input type="text" id="dni-nie" name="dni-nie" placeholder="DNI-NIE">
                         <div class="border"></div>
                     </div>
                     <div class="data texto">

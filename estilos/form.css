@@ -90,13 +90,17 @@ body{
     animation: girar 4s;
     animation-delay: 2s;
 } */
-.popup-message .exit-ico{
+.popup-message .exit{
     position: absolute;
     cursor: pointer;
-    width: 40px;
+    color: var(--grey);
+    font-size: 1.2rem;
     top: 0;
     right: 0;
-    z-index: 5;
+    margin: 5px 10px;
+}
+.popup-message .exit:hover{
+    color: var(--dark-purple);
 }
 .popup-message strong{
     font-family: var(--roboto-fnt);
@@ -221,7 +225,6 @@ form{
     -webkit-appearance: none;
     -webkit-appearance: textfield;
 }
-
 i{
     font-size: 1rem;
     color: var(--dark-purple);
@@ -267,6 +270,10 @@ i{
     border-radius: 8px;
     transition: all .3s ease;
     cursor: pointer;
+}
+.buttons-section button:focus{
+    border: 3px solid var(--dark-purple);
+    box-shadow: 0 0 5px var(--dark-purple);
 }
 .buttons-container button:hover{
     border: 3px solid var(--dark-purple);

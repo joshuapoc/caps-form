@@ -148,33 +148,23 @@ const sig_buttons=document.querySelectorAll(".sig");
 const atr_buttons=document.querySelectorAll(".atr");
 const form_sections=document.querySelectorAll(".form");
 for(i=0;i<sig_buttons.length;i++){
-    let form_section=i;
+    let current_form_section=i;
+    let next_form_section=i+1;
+    sig_buttons[i].addEventListener("click",()=>{
+        form_sections[current_form_section].style.transform="translate(-110%)";
+        form_sections[next_form_section].style.transform="translate(0%)";
+    });
     sig_buttons[i].addEventListener("keydown",(e)=>{
-        if(e.key==="Tab"){
+        if(e.key==="Tab" && e.shiftKey===false){
             e.preventDefault();
-        }else{
-            
+        }
+        if(e.key==="Enter"){
+            e.preventDefault();
+            form_sections[current_form_section].style.transform="translate(-110%)";
+            form_sections[next_form_section].style.transform="translate(0%)";
         }
     });
 }
-
-function slide_next(form_iteration){
-    form_sections[form_iteration].style.transform="translate(-110%)";
-    form_sections[form_iteration+1].style.transform="translate(0)";
-}
-
-
-
-
-/* sig_buttons[i].addEventListener("click", ()=>{
-    form_sections[form_section].style.transform="translate(-110%)";
-    form_sections[form_section+1].style.transform="translate(0)";
-}); */
-
-
-
-
-
 for(i=0;i<atr_buttons.length;i++){
     let current_form_section=i+1;
     let prior_form_section=i;
@@ -182,9 +172,11 @@ for(i=0;i<atr_buttons.length;i++){
         form_sections[current_form_section].style.transform="translate(110%)";
         form_sections[prior_form_section].style.transform="translate(0%)";
     });
+    atr_buttons[i].addEventListener("keydown",(e)=>{
+        if(e.key==="Enter"){
+            e.preventDefault();
+            form_sections[current_form_section].style.transform="translate(110%)";
+            form_sections[prior_form_section].style.transform="translate(0%)";
+        }
+    });
 }
-/* sig_buttons[0].addEventListener("keydown",(e)=>{
-    if(e.key==="Tab"){
-        e.preventDefault();
-    }
-}); */
